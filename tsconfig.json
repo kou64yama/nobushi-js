@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": ["**/*.test.ts", "**/*.spec.ts", "**/__tests__", "**/__mocks__"],
+  "references": [
+    { "path": "packages/iterable/tsconfig.json" },
+    { "path": "packages/polyfill/tsconfig.json" }
+  ]
+}
