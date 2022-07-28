@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "lib",
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/__tests__", "**/__mocks__"],
+  "references": []
+}

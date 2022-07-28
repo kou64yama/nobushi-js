@@ -1,0 +1,42 @@
+{
+  "name": "@nobushi/polyfill",
+  "version": "0.0.0",
+  "description": "The polyfill for NobushiJS",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "clean": "rimraf lib *.tsbuildinfo",
+    "build": "tsc && rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kou64yama/nobushi-js.git",
+    "directory": "packages/polyfill"
+  },
+  "author": "Yamada Koji <kou64yama@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kou64yama/nobushi-js/issues"
+  },
+  "homepage": "https://github.com/kou64yama/nobushi-js/tree/main/packages/polyfill#readme",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./lib/*": {
+      "import": "./lib/*/index.mjs",
+      "require": "./lib/*/index.js"
+    }
+  },
+  "typedoc": {
+    "entryPoint": "./src/index.ts",
+    "readmeFile": "./README.md"
+  }
+}
