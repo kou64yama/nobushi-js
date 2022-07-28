@@ -1,3 +1,5 @@
+import { setTimeout } from './setTimeout';
+
 /**
  * Returns an async iterator that generates values in an interval of `delay` ms.
  *
@@ -24,5 +26,17 @@ export const setInterval = <T = undefined>(
   delay?: number,
   value?: T,
 ): AsyncIterable<T> => {
-  throw new Error('not implemented');
+  const iterator = (): AsyncIterator<T> => ({
+    next: async () => {
+      const result: IteratorYieldResult<T> = {
+        value: value as T,
+        done: false,
+      };
+      return await setTimeout(delay, result);
+    },
+  });
+
+  return {
+    [Symbol.asyncIterator]: iterator,
+  };
 };

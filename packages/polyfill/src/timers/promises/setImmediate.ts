@@ -1,3 +1,5 @@
+import { setTimeout } from './setTimeout';
+
 /**
  * For example:
  *
@@ -13,5 +15,5 @@
  * @see https://nodejs.org/docs/latest-v16.x/api/timers.html#timerspromisessetimmediatevalue-options
  */
 export const setImmediate = async <T = undefined>(value?: T): Promise<T> => {
-  throw new Error('not implemented');
+  return await setTimeout(1, value);
 };

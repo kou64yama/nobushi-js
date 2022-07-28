@@ -17,5 +17,7 @@ export const setTimeout = async <T = undefined>(
   delay?: number,
   value?: T,
 ): Promise<T> => {
-  throw new Error('not implemented');
+  return await new Promise((resolve) => {
+    globalThis.setTimeout(() => resolve(value as T), delay);
+  });
 };
