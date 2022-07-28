@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true,
-    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "types": ["@types/jest"]
   },
   "include": ["**/*.test.ts", "**/*.spec.ts", "**/__tests__", "**/__mocks__"],
